@@ -141,17 +141,17 @@ const namedColors = [
   "Yellow",
   "YellowGreen",
 ];
-const max = namedColors.length - 1;
 
 const bodyEl = document.querySelector("#body");
 const buttonEl = document.querySelector("#button");
 const headingEl = document.createElement("h1");
-
+bodyEl.style.backgroundColor = namedColors[0];
+headingEl.textContent = namedColors[0];
+bodyEl.appendChild(headingEl);
 buttonEl.addEventListener("click", () => {
-  const randomNumber = Math.floor(Math.random() * (max - 0 + 1)) + 0;
-  console.log(namedColors[randomNumber]);
+  const randomNumber = Math.floor(Math.random() * namedColors.length);
+  console.log(randomNumber);
 
   bodyEl.style.backgroundColor = namedColors[randomNumber];
   headingEl.textContent = namedColors[randomNumber];
-  bodyEl.appendChild(headingEl);
 });
